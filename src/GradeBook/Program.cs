@@ -11,7 +11,7 @@ namespace GradeBook
 
            // var p = new Program();
 
-            Book book = new Book();
+            Book book = new Book(); 
             book.AddGrade(89.1);
 
 
