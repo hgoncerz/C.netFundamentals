@@ -3,6 +3,15 @@ namespace GradeBook.Tests
     public class TypeTests
     {
         [Fact]
+        public void Test2()
+        {
+            Book book = new Book("book");
+            book.AddGrade(99);
+
+            Assert.Equal(99, book.grades[0]);
+        }
+
+        [Fact]
         public void Test1()
         {
             int x = GetInt();
@@ -64,7 +73,20 @@ namespace GradeBook.Tests
         {
             book.Name = name;
         }
+        [Fact]
+        public void StringsBehaveLikeValueTypes()
+        {
+            string name = "Scott";
+            string upper = MakeUpperCase(name);
 
+            Assert.Equal("Scott", name);
+            Assert.Equal("SCOTT", upper);
+        }
+
+        private string MakeUpperCase(string parameter)
+        {
+            return parameter.ToUpper();
+        }
 
         [Fact]
         public void GetBookREturnsDifferentObjects()
