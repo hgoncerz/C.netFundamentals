@@ -3,6 +3,21 @@ namespace GradeBook.Tests
     public class TypeTests
     {
         [Fact]
+        public void CSharpCanPassByRef()
+        {
+            Book book1 = GetBook("Book 1");
+            GetBookSetName(out book1, "New Name");
+
+            Assert.Equal("New Name", book1.Name);
+
+        }
+        private void GetBookSetName(out Book book, String name)
+        {
+            book = new Book(name);
+        }
+
+
+        [Fact]
         public void CSharpIsPasByValue()
         {
             Book book1 = GetBook("Book 1");
