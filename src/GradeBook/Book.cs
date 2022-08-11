@@ -8,12 +8,18 @@ namespace GradeBook
 {
     public class Book
     {
-        public string Name;
         public List<double> grades;
+
+        public string Name
+        {
+            get;private set;
+        }
+
+        readonly string category = "Science";
         public Book(string name)
         {
             grades = new List<double>();
-            Name = name;
+            name = name;
         }
         public void AddLetterGrade(char letter)
         {
