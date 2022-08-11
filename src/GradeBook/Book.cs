@@ -6,20 +6,23 @@ using System.Threading.Tasks;
 
 namespace GradeBook
 {
-    public class Book
+    public class NamedObject
+    {
+        public NamedObject(string name)
+        {
+            Name = name;
+        }
+        public string Name { get; set; }
+    }
+    public class Book : NamedObject
     {
         public List<double> grades;
 
-        public string Name
-        {
-            get;private set;
-        }
-
-        readonly string category = "Science";
-        public Book(string name)
+        const string category = "Science";
+        public Book(string name) : base(name)
         {
             grades = new List<double>();
-            name = name;
+            Name = name;
         }
         public void AddLetterGrade(char letter)
         {
