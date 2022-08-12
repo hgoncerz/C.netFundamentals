@@ -18,7 +18,7 @@ namespace GradeBook
     public interface IBook
     {
         void AddGrade(Double grade);
-        Statistics GetStatistics();
+        Statistics GetStatistic();
         string Name { get; }
     }
 
@@ -31,10 +31,7 @@ namespace GradeBook
 
         public abstract void AddGrade(double grade);
 
-        public virtual Statistics GetStatistics()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract Statistics GetStatistic();
     }
     public class InMemoryBook : Book
     {
@@ -78,7 +75,7 @@ namespace GradeBook
             }
             
         }
-        public Statistics GetStatistic()
+        public override Statistics GetStatistic()
         {
             var result = new Statistics();
             result.Average = 0.0;
